@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - BookHive</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user-profile.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="user-dashboard.html">Dashboard</a>
+            <a href="user-settings.html">Settings</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">JD</div>
+            <div class="profile-info">
+                <h1>Akash</h1>
+                <p>Student ID: ST123456</p>
+                <p>Email: akash@example.com</p>
+                <p>Member since: January 2024</p>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stat-card">
+                <h3>Books Read</h3>
+                <div class="number">42</div>
+            </div>
+            <div class="stat-card">
+                <h3>Currently Borrowed</h3>
+                <div class="number">3</div>
+            </div>
+            <div class="stat-card">
+                <h3>Reading Streak</h3>
+                <div class="number">15 days</div>
+            </div>
+            <div class="stat-card">
+                <h3>Reviews Written</h3>
+                <div class="number">28</div>
+            </div>
+        </div>
+
+        <div class="profile-sections">
+            <div class="section-card">
+                <h2>Recent Achievements</h2>
+                <div class="achievement-item">
+                    <span class="achievement-icon">🏆</span>
+                    <div>
+                        <h3>Bookworm</h3>
+                        <p>Read 10 books in one month</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-icon">⭐</span>
+                    <div>
+                        <h3>Genre Explorer</h3>
+                        <p>Read books from 5 different genres</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-icon">📚</span>
+                    <div>
+                        <h3>Quick Reader</h3>
+                        <p>Finished a book in 2 days</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>Favorite Genres</h2>
+                <div class="achievement-item">
+                    <span class="achievement-icon">📖</span>
+                    <div>
+                        <h3>Science Fiction</h3>
+                        <p>15 books read</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-icon">📚</span>
+                    <div>
+                        <h3>Mystery</h3>
+                        <p>12 books read</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-icon">📕</span>
+                    <div>
+                        <h3>Non-Fiction</h3>
+                        <p>8 books read</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html> 

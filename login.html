@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login - BookHive</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="loginForm" action="/checkUser" method="POST">
+            <h2>User Login</h2>
+            <div class="form-group">
+                <label for="email">Email / ID</label>
+                <input type="text" id="email" name="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <a href="index.html" class="back-link">Back to Home</a>
+            <div class="signup-section">
+                <p>Don't have an account?</p>
+                <a href="signup.html" class="signup-link">Sign up now</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Show error message if login failed
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('error') === 'invalid') {
+            alert('Invalid email or password. Please try again.');
+        }
+    </script>
+</body>
+</html>

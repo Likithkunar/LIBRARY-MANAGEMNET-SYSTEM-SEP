@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - BookHive</title>
+    <link rel="stylesheet" href="css/user-dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="user-info">
+                <div class="user-avatar">JD</div>
+                <div class="user-details">
+                    <h1>Akash</h1>
+                    <p>Student ID: ST123456</p>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="user-profile.html">Profile</a>
+                <a href="#" id="notificationToggle">
+                    Notifications
+                    <span class="notification-count">3</span>
+                </a>
+                <a href="user-settings.html">Settings</a>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <h2>Search Books</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by title, author, or ISBN...">
+                <button class="search-btn">Search</button>
+            </div>
+            <div class="search-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Fiction</button>
+                <button class="filter-btn">Non-Fiction</button>
+                <button class="filter-btn">Textbooks</button>
+                <button class="filter-btn">Reference</button>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Currently Borrowed</h2>
+                    <span class="count">3 books</span>
+                </div>
+                <ul class="book-list">
+                    <li class="book-item">
+                        <div class="book-info">
+                            <h3>Introduction to Computer Science</h3>
+                            <p>By John Smith</p>
+                            <span class="book-type">📖 Physical</span>
+                        </div>
+                        <div class="due-date">Due: 2024-03-15</div>
+                    </li>
+                    <li class="book-item">
+                        <div class="book-info">
+                            <h3>Data Structures and Algorithms</h3>
+                            <p>By Jane Wilson</p>
+                            <span class="book-type">📱 Digital</span>
+                        </div>
+                        <div class="due-date">Due: 2024-03-20</div>
+                    </li>
+                    <li class="book-item">
+                        <div class="book-info">
+                            <h3>Database Management Systems</h3>
+                            <p>By Robert Brown</p>
+                            <span class="book-type">🎧 Audio</span>
+                        </div>
+                        <div class="due-date">Due: 2024-03-25</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Reading Goals</h2>
+                    <button class="action-btn" onclick="showGoalModal()">Set New Goal</button>
+                </div>
+                <div class="goals-list">
+                    <div class="goal-item">
+                        <h3>Monthly Reading Challenge</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <p>3/4 books completed</p>
+                        <span class="reward-badge">🎯 75% Complete</span>
+                    </div>
+                    <div class="goal-item">
+                        <h3>Genre Explorer</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <p>2/5 genres explored</p>
+                        <span class="reward-badge">🌟 40% Complete</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Fines & Payments</h2>
+                    <span class="count">$15.00</span>
+                </div>
+                <div class="fines-list">
+                    <div class="fine-item">
+                        <div class="fine-info">
+                            <h3>Data Structures and Algorithms</h3>
+                            <p>Overdue by 2 days</p>
+                        </div>
+                        <div class="fine-amount">$5.00</div>
+                    </div>
+                    <div class="fine-item">
+                        <div class="fine-info">
+                            <h3>Database Management Systems</h3>
+                            <p>Overdue by 1 day</p>
+                        </div>
+                        <div class="fine-amount">$10.00</div>
+                    </div>
+                    <button class="pay-fines-btn">Pay All Fines</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Chatbot Widget -->
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <span>💬</span>
+        </div>
+
+        <div class="chatbot-widget" id="chatbotWidget">
+            <div class="chatbot-header">
+                <h3>Page Pilot AI</h3>
+                <span class="chatbot-close" id="chatbotClose">✖</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    Hello! I'm Page Pilot, your AI library assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <!-- Notification Panel -->
+        <div class="notification-center" id="notificationCenter">
+            <div class="notification-header">
+                <h3>Notifications</h3>
+                _
+                <span class="notification-count">3</span>
+            </div>
+            <div class="notification-list">
+                <div class="notification-item">
+                    <span class="notification-icon">📚</span>
+                    <div class="notification-content">
+                        <p>Your book "Data Structures" is due tomorrow</p>
+                        <span class="notification-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <span class="notification-icon">✨</span>
+                    <div class="notification-content">
+                        <p>New book recommendation available</p>
+                        <span class="notification-time">5 hours ago</span>
+                    </div>
+                </div>
+                <div class="notification-item">
+                    <span class="notification-icon">📅</span>
+                    <div class="notification-content">
+                        <p>Library workshop next week</p>
+                        <span class="notification-time">1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goal Modal -->
+    <div class="goal-modal" id="goalModal">
+        <div class="goal-modal-content">
+            <div class="modal-header">
+                <h2>Set New Reading Goal</h2>
+                <span class="close-modal" onclick="closeGoalModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="goalForm" onsubmit="submitGoal(event)">
+                    <div class="form-group">
+                        <label for="goalType">Goal Type</label>
+                        <select id="goalType" name="goalType" required>
+                            <option value="">Select a goal type</option>
+                            <option value="books">Number of Books</option>
+                            <option value="pages">Number of Pages</option>
+                            <option value="genres">Different Genres</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goalTarget">Target</label>
+                        <input type="number" id="goalTarget" name="goalTarget" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goalDeadline">Deadline</label>
+                        <input type="date" id="goalDeadline" name="goalDeadline" required>
+                    </div>
+                    <button type="submit" class="submit-goal-btn">Set Goal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/user-dashboard.js"></script>
+</body>
+</html>

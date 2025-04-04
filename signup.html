@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - BookHive</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="signupForm" action="/signup1" method="POST" onsubmit="return validateSignupForm(event)">
+            <h2>Create Account</h2>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <div class="error-message" id="nameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" name="studentId" required>
+                <div class="error-message" id="studentIdError"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="error-message" id="confirmPasswordError"></div>
+            </div>
+            <button type="submit" class="login-btn">Sign Up</button>
+            <a href="index.html" class="back-link">Back to Home</a>
+            <div class="signup-section">
+                <p>Already have an account?</p>
+                <a href="login.html" class="signup-link">Login here</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/signup.js"></script>
+
+</body>
+</html> 

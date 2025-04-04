@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - BookHive</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/admin-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="adminLoginForm" action="/checkAdmin" method="POST">
+            <h2>Admin Login</h2>
+            <div class="form-group">
+                <label for="adminId">Admin ID</label>
+                <input type="text" id="adminId" name="adminId" required>
+                <div class="error-message" id="adminIdError"></div>
+            </div>
+            <div class="form-group">
+                <label for="adminPassword">Password</label>
+                <input type="password" id="adminPassword" name="password" required>
+                <div class="error-message" id="adminPasswordError"></div>
+            </div>
+            <button type="submit" class="login-btn">Admin Login</button>
+            <a href="index.html" class="back-link">Back to Home</a>
+            <div class="security-notice">
+                This is a secure admin portal. Unauthorized access is prohibited.
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('error') === 'invalid') {
+            alert('Invalid admin credentials. Please try again.');
+        }
+    </script>
+</body>
+</html>

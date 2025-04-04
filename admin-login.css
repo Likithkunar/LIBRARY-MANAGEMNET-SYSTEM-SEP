@@ -1,0 +1,79 @@
+.login-container {
+    min-height: 90vh; /* Reduced from 100vh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* Reduced padding */
+}
+
+.login-form {
+    background: white;
+    padding: 1.5rem; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 350px; /* Reduced max-width */
+}
+
+.login-form h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem; /* Reduced margin */
+    text-align: center;
+    font-size: 1.5rem; /* Reduced font size */
+}
+
+.form-group {
+    margin-bottom: 1rem; /* Reduced margin */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem; /* Reduced margin */
+    color: #2c3e50;
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.6rem; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.7rem; /* Reduced padding */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem; /* Reduced font size */
+    margin-top: 0.5rem; /* Reduced margin */
+    cursor: pointer;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 0.8rem; /* Reduced margin */
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem; /* Reduced font size */
+}
+
+.security-notice {
+    text-align: center;
+    font-size: 0.8rem; /* Reduced font size */
+    color: #666;
+    margin-top: 0.8rem; /* Reduced margin */
+    padding-top: 0.8rem; /* Reduced padding */
+    border-top: 1px solid #eee;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem; /* Reduced font size */
+    margin-top: 0.3rem; /* Reduced margin */
+    display: none;
+}

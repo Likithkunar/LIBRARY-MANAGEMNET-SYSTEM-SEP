@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings - BookHive</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user-settings.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-links">
+            <a href="user-dashboard.html">Dashboard</a>
+            <a href="user-profile.html">Profile</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="settings-container">
+        <div class="settings-card">
+            <h2>Account Settings</h2>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" value="akash@example.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Change Password</label>
+                <input type="password" id="password" placeholder="Enter new password">
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h2>Notification Preferences</h2>
+            <div class="toggle-switch">
+                <label>Email Notifications</label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-switch">
+                <label>Due Date Reminders</label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-switch">
+                <label>New Book Alerts</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h2>Reading Preferences</h2>
+            <div class="form-group">
+                <label for="defaultView">Default Book View</label>
+                <select id="defaultView">
+                    <option>Grid View</option>
+                    <option>List View</option>
+                </select>
+            </div>
+            <div class="toggle-switch">
+                <label>Show Reading Progress</label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h2>Privacy Settings</h2>
+            <div class="toggle-switch">
+                <label>Show Reading History</label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-switch">
+                <label>Show Achievement Badges</label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <button class="save-btn" onclick="saveSettings()">Save Changes</button>
+    </div>
+
+    <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        function saveSettings() {
+            alert('Settings saved successfully!');
+        }
+    </script>
+</body>
+</html> 

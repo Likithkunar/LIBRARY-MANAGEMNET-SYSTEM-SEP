@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BookHive</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>BookHive Admin</h1>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i>📊</i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i>📚</i> Inventory
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i>👥</i> Users
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i>📋</i> Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i>⚙️</i> Settings
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="dashboard-header">
+                <div class="admin-info">
+                    <div class="admin-avatar">AD</div>
+                    <div class="admin-details">
+                        <h1>Admin Dashboard</h1>
+                        <p>Welcome back, Administrator</p>
+                    </div>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Books</h3>
+                    <div class="number">1,234</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Users</h3>
+                    <div class="number">856</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Overdue Books</h3>
+                    <div class="number">23</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Revenue</h3>
+                    <div class="number">$12,345</div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Recent Borrowings</h2>
+                    <button class="action-btn">View All</button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Borrower</th>
+                                <th>Borrow Date</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Introduction to Computer Science</td>
+                                <td>John Doe</td>
+                                <td>2024-02-15</td>
+                                <td>2024-03-15</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>Data Structures and Algorithms</td>
+                                <td>Jane Smith</td>
+                                <td>2024-02-10</td>
+                                <td>2024-03-10</td>
+                                <td><span class="status-badge status-overdue">Overdue</span></td>
+                            </tr>
+                            <tr>
+                                <td>Database Management Systems</td>
+                                <td>Mike Johnson</td>
+                                <td>2024-02-20</td>
+                                <td>2024-03-20</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Inventory Alerts</h2>
+                    <button class="action-btn">Manage Inventory</button>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Current Stock</th>
+                                <th>Threshold</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Web Development Fundamentals</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td><span class="status-badge status-pending">Low Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td>Machine Learning Basics</td>
+                                <td>2</td>
+                                <td>10</td>
+                                <td><span class="status-badge status-overdue">Critical</span></td>
+                            </tr>
+                            <tr>
+                                <td>Cloud Computing Essentials</td>
+                                <td>15</td>
+                                <td>10</td>
+                                <td><span class="status-badge status-active">In Stock</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>
